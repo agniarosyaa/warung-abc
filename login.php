@@ -8,7 +8,7 @@
         
         <?php
         session_start();
-        if (isset($SESSION['pesan_error'])) {
+        if (isset($_SESSION['pesan_error'])) {
             echo '<p>' . $_SESSION['pesan_error'] . '</p>';
             unset($_SESSION['pesan_error']);
         }

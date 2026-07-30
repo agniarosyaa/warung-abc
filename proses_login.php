@@ -10,7 +10,7 @@ $hasil = mysqli_query($koneksi, $sql);
 
 if (mysqli_num_rows($hasil) == 1) {
     $data = mysqli_fetch_assoc($hasil);
-}
+
 
 if (password_verify($password, $data['password'])) {
     $_SESSION['login'] = true;
@@ -19,19 +19,20 @@ if (password_verify($password, $data['password'])) {
     $_SESSION['role'] = $data['role'];
 
     $id_user = $data['id_user'];
-    $waktu = date['Y-m-d H:i:s'];
+    $waktu = date('Y-m-d H:i:s');
     $log = "INSERT INTO tbl_log (id_user, aktivitas, waktu)";
     $log = "VALUES ('$id_user', 'login', '$waktu')";
     mysqli_query($koneksi, $log);
 
-    header('Location: dasboard.php');
+    header('Location: dashboard.php');
     exit;
 } else {
     $_SESSION['pesan_error'] = 'Password salah!';
     header('Location: login.php');
     exit;
+}
 } else {
-    $_SESSION['pesan_error'] = 'Username tidak ditemukan!';
+    $_SESSION['pesan_error'] = 'username tidak ditemukan!';
     header('Location: login.php');
     exit;
 }
