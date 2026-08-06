@@ -3,24 +3,37 @@ include 'cek_session.php';
 ?>
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Dashboard - Warung ABC</title>
-    </head>
-    <body>
+<head>
+    <title>Dashboard - Warung ABC</title>
+<link rel="stylesheet" href="css/style.css">
+    <!-- Tambahkan ini -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Tambahkan container -->
+    <div class="container">
+
         <h1>Selamat datang, <?php echo $_SESSION['nama_lengkap']; ?></h1>
         <p>Anda login sebagai: <?php echo $_SESSION['role']; ?></p>
 
-        <ul> 
+        <ul>
             <?php if ($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'gudang') { ?>
             <li><a href="data_barang.php">Data Barang</a></li>
             <?php } ?>
 
             <?php if ($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'kasir') { ?>
-        <li><a href ="transaksi.php">Transaksi Kasir</a></li>
-        <li><a href="riwayat_transaksi.php">Riwayat Transaksi</a></li>
-    <?php } ?>
-</ul>
-            
-        <a href="logout.php">Logout</a>
-    </body>
+                <li><a href="transaksi.php">Transaksi Kasir</a></li>
+                <li><a href="riwayat_transaksi.php">Riwayat Transaksi</a></li>
+            <?php } ?>
+        </ul>
+
+        <a href="logout.php" class="btn">Logout</a>
+
+    </div>
+    <!-- Penutup container -->
+
+</body>
 </html>

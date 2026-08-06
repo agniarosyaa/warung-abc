@@ -1,7 +1,9 @@
-<?php include ' cek_session.php'; ?>
+<?php 
+include 'cek_session.php'; ?>
 <!DOCTYPE html>
 <html>
     <head><title>Tambah Barang - Warung ABC</title></head>
+    <link rel="stylesheet" href="css/style.css">
     <body>
         <h1>Tambah Barang</h1>
         <form action="proses_tambah_barang.php" method="POST">
@@ -15,7 +17,7 @@
                 <tr><td>Stok</td><td>:</td>
                     <td><input type="number" name="stok" required></td></tr>
                 <tr><td>Tanggal Kadaluarsa</td><td>:</td>
-                    <td><input typr="date" name="tanggal_kadaluarsa"></td></tr>
+                    <td><input type="date" name="tanggal_kadaluarsa"></td></tr>
                 <tr><td colspan="3" ><input type="submit" value="Simpan"></td></tr>
             </table>
         </form>

@@ -11,7 +11,7 @@ $exp =$_POST['tanggal_kadaluarsa'];
 $exp_sql = $exp === '' ? 'NULL' : "'$exp'";
 
 $sql = "INSERT INTO tbl_barang (kode_barang, nama_barang, harga_satuan, stok, tanggal_kadaluarsa)";
-$sql .= "VALUES ('$kode', '$harga', 'stok', $exp_sql)";
+$sql .= "VALUES ('$kode', '$nama', '$harga', '$stok', $exp_sql)";
 
 if (mysqli_query($koneksi, $sql)) {
     $id_user = $_SESSION['id_user'];

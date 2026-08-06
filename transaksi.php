@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 include 'cek_session.php';
 include 'config/koneksi.php';
 
@@ -15,7 +15,10 @@ foreach ($_SESSION['keranjang'] as $item) {
 ?>
 <!DOCTYPE html>
 <html>
-    <head><title>Transaksi - Warung ABC</title></head>
+    <head>
+        <title>Transaksi - Warung ABC</title>
+    <link rel="stylesheet" href="css/style.css">
+    </head>
     <body>
         <h1>Transaksi Penjualan</h1>
 

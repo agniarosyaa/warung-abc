@@ -4,7 +4,7 @@ include 'cek_session.php';
 include 'config/koneksi.php';
 
 if (empty($_SESSION['keranjang'])) {
-    $_SESSION['pesan_error'] = 'keranjang masih kosong!';
+    $_SESSION['pesan_error'] = 'Keranjang masih kosong!';
     header('Location: transaksi.php');
     exit;
 }
@@ -18,25 +18,34 @@ foreach ($_SESSION['keranjang'] as $item) {
     $total += $item['subtotal'];
 }
 
-$sql = "INSER INTO tbl_transaksi (no_transaksi, tanggal, id_kasir, id_pelanggan, total_bayar)";
-$sql .= "VALUES ('$no_transaksi','$tanggal', '$id_kasir', NULL, '$total')";
-mysqli_query($koneksi, $sql);
+$sql = "INSERT INTO tbl_transaksi (no_transaksi, tanggal, id_kasir, id_pelanggan, total_bayar)
+        VALUES ('$no_transaksi', '$tanggal', '$id_kasir', NULL, '$total')";
+
+if (!mysqli_query($koneksi, $sql)) {
+    die("Gagal menyimpan transaksi: " . mysqli_error($koneksi));
+}
 
 $id_transaksi = mysqli_insert_id($koneksi);
 
 foreach ($_SESSION['keranjang'] as $id_barang => $item) {
     $jumlah = $item['jumlah'];
-    $subtotal = $item['$detail'];
+    $subtotal = $item['subtotal'];
 
-    $detail = "INSERT INTO tbl_detail_transaksi (id_transaksi, id_barang, jumlah, subtotal)";
-    $detail .= " VALUES ('$id_transaksi', '$id_barang', '$jumlah', '$subtotal')";
-    $update_stok = "UPDATE tbl_barang SET stok = stok - $jumlah WHERE id_barang = '$id_barang'";
+    $detail = "INSERT INTO tbl_detail_transaksi (id_transaksi, id_barang, jumlah, subtotal)
+               VALUES ('$id_transaksi', '$id_barang', '$jumlah', '$subtotal')";
+    mysqli_query($koneksi, $detail);
+
+    $update_stok = "UPDATE tbl_barang
+                    SET stok = stok - $jumlah
+                    WHERE id_barang = '$id_barang'";
     mysqli_query($koneksi, $update_stok);
 }
 
 $waktu = date('Y-m-d H:i:s');
-$aktivitas ="transaksi: $no_transaksi";
-$log = "INSERT INTO tbl_log (id_user, aktivitas, waktu) VALUES ('$id_kasir', '$aktivitas', '$waktu')";
+$aktivitas = "Transaksi: $no_transaksi";
+
+$log = "INSERT INTO tbl_log (id_user, aktivitas, waktu)
+        VALUES ('$id_kasir', '$aktivitas', '$waktu')";
 mysqli_query($koneksi, $log);
 
 unset($_SESSION['keranjang']);

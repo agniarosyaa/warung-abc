@@ -19,7 +19,7 @@ if ($barang && $jumlah > 0 && $jumlah <= $barang['stok']) {
 
     $_SESSION['keranjang'][$id_barang] = array(
         'nama_barang' => $barang['nama_barang'],
-        'harga' => $barang['nama_barang'],
+        'harga' => $barang['harga_satuan'],
         'jumlah' => $jumlah,
         'subtotal' => $subtotal,
     );

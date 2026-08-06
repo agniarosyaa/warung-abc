@@ -1,0 +1,365 @@
+/* ==========================
+   GOOGLE FONT
+========================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fff7fa, #ffe5ef, #ffd6e8, #fff3f8);
+  background-size: 400% 400%;
+  animation: bgMove 12s ease infinite;
+  padding: 40px;
+  color: #5a4353;
+}
+
+@keyframes bgMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ==========================
+   CONTAINER
+========================== */
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px;
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.72);
+
+  backdrop-filter: blur(15px);
+
+  box-shadow:
+    0 25px 60px rgba(233, 30, 99, 0.12),
+    0 8px 18px rgba(255, 255, 255, 0.6) inset;
+}
+
+/* ==========================
+   JUDUL
+========================== */
+
+h1 {
+  text-align: center;
+  font-size: 40px;
+  color: #d63384;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+
+h2,
+h3 {
+  color: #c2185b;
+  margin-bottom: 15px;
+}
+
+p {
+  color: #666;
+  line-height: 1.8;
+}
+
+/* ==========================
+   MENU DASHBOARD
+========================== */
+
+ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  margin-top: 35px;
+  list-style: none;
+}
+
+ul li {
+  transition: 0.35s;
+}
+
+ul li a {
+  display: block;
+
+  background: white;
+
+  border-radius: 22px;
+
+  padding: 30px;
+
+  text-align: center;
+
+  text-decoration: none;
+
+  color: #d63384;
+
+  font-size: 18px;
+
+  font-weight: 600;
+
+  box-shadow: 0 15px 35px rgba(214, 51, 132, 0.12);
+
+  transition: 0.35s;
+
+  border: 2px solid transparent;
+}
+
+ul li a:hover {
+  transform: translateY(-8px);
+
+  border-color: #f9b8d0;
+
+  background: linear-gradient(145deg, #fff, #ffeaf3);
+
+  box-shadow: 0 20px 40px rgba(214, 51, 132, 0.25);
+}
+
+/* ==========================
+   TABEL
+========================== */
+
+table {
+  width: 100%;
+
+  margin-top: 25px;
+
+  border-collapse: collapse;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  background: white;
+
+  box-shadow: 0 15px 40px rgba(214, 51, 132, 0.12);
+}
+
+table thead {
+  background: linear-gradient(90deg, #ff8db7, #f472b6);
+
+  color: white;
+}
+
+table th {
+  padding: 18px;
+
+  font-size: 15px;
+
+  font-weight: 600;
+}
+
+table td {
+  padding: 18px;
+
+  text-align: center;
+
+  border-bottom: 1px solid #ffe2ec;
+}
+
+table tbody tr {
+  transition: 0.25s;
+}
+
+table tbody tr:nth-child(even) {
+  background: #fff8fb;
+}
+
+table tbody tr:hover {
+  background: #ffe5ef;
+
+  transform: scale(1.01);
+}
+
+/* ==========================
+   FORM
+========================== */
+
+label {
+  font-weight: 600;
+
+  color: #d63384;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+
+  padding: 14px 18px;
+
+  margin-top: 8px;
+
+  margin-bottom: 20px;
+
+  border-radius: 15px;
+
+  border: 2px solid #ffd3e2;
+
+  background: white;
+
+  transition: 0.3s;
+
+  font-size: 15px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+
+  border-color: #f06292;
+
+  box-shadow: 0 0 15px rgba(240, 98, 146, 0.25);
+}
+
+/* ==========================
+   BUTTON
+========================== */
+
+.btn,
+button {
+  display: inline-block;
+
+  background: linear-gradient(135deg, #ff6ea8, #ec4899);
+
+  color: white;
+
+  padding: 13px 30px;
+
+  border: none;
+
+  border-radius: 50px;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  transition: 0.35s;
+
+  box-shadow: 0 12px 25px rgba(236, 72, 153, 0.25);
+}
+
+.btn:hover,
+button:hover {
+  transform: translateY(-4px);
+
+  box-shadow: 0 18px 35px rgba(236, 72, 153, 0.35);
+}
+
+/* ==========================
+   LINK
+========================== */
+
+a {
+  color: #d63384;
+
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #a61d66;
+}
+
+/* ==========================
+   ALERT
+========================== */
+
+.success {
+  padding: 18px;
+
+  background: #ffe7f0;
+
+  border-left: 6px solid #ec4899;
+
+  border-radius: 15px;
+
+  margin-bottom: 25px;
+}
+
+.error {
+  padding: 18px;
+
+  background: #ffe5e5;
+
+  border-left: 6px solid red;
+
+  border-radius: 15px;
+
+  margin-bottom: 25px;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+.footer {
+  margin-top: 40px;
+
+  text-align: center;
+
+  color: #b76e90;
+}
+
+/* ==========================
+   SCROLLBAR
+========================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f48fb1;
+
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width: 768px) {
+  body {
+    padding: 20px;
+  }
+
+  .container {
+    padding: 25px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  ul {
+    grid-template-columns: 1fr;
+  }
+
+  table {
+    font-size: 13px;
+  }
+
+  table th,
+  table td {
+    padding: 12px;
+  }
+}

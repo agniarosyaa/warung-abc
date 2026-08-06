@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Login - Warung ABC</title>
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
         <h1>Login Aplikasi Kasir Warung ABC</h1>
