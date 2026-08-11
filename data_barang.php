@@ -48,7 +48,7 @@ $hasil = mysqli_query($koneksi, $sql);
                 <a href="hapus_barang.php?id=<?php echo $row['id_barang']; ?>"
                    class="btn"
                    onclick="return confirm('Yakin hapus barang ini?');">
-                    🗑 Hapus
+                    🗑 Hapus</a>
                 </a>
             </td>
         </tr>

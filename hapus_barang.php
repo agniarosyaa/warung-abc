@@ -1,5 +1,4 @@
 <?php
-session_start();
 include 'cek_session.php';
 include 'config/koneksi.php';
 
@@ -8,7 +7,9 @@ $id = $_GET['id'];
 $cek = mysqli_query($koneksi, "SELECT nama_barang FROM tbl_barang WHERE id_barang = '$id'");
 $data = mysqli_fetch_assoc($cek);
 
-$sql = "DELETE FROM tbl_barang WHERE id_barang = '$id'";
+$sql = "DELETE FROM tbl_barang WHERE id_barang='$id'";
+
+
 
 if (mysqli_query($koneksi, $sql)) {
     $id_user = $_SESSION['id_user'];
@@ -18,6 +19,6 @@ if (mysqli_query($koneksi, $sql)) {
         mysqli_query($koneksi, $log);
 }
 
-header('Location: data_barang.pho');
+header('Location: data_barang.php');
 exit;
 ?>
