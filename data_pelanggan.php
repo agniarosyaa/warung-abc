@@ -8,6 +8,7 @@ $hasil = mysqli_query($koneksi, $sql);
 <!DOCTYPE html>
 <html> 
     <head><title>Data Pelanggan - warung ABC</title></head>
+     <link rel="stylesheet" href="css/style.css">
     <body>
         <h1>Data Pelanggan</h1>
         <p><a href="dashboard.php">Tambah Pelanggan</a></p>

@@ -10,6 +10,7 @@ $data = mysqli_fetch_assoc($hasil);
 <!DOCTYPE html>
 <html>
     <head><title>Edit Pelanggan - Warung ABC</title></head>
+     <link rel="stylesheet" href="css/style.css">
     <body>
         <h1>Edit Pelanggan</h1>
         <from action="proses_edit_pelanggan.php" method="POST">
