@@ -40,6 +40,6 @@ $jumlah_transaksi = 0;
         <p>Jumlah Transaksi: <?php echo $jumlah_transaksi; ?></p>
         <p>Total Pendapatan bulan Ini: Rp
             <?php echo number_format($total_bulanan, 0, ',', '.'); ?></p>
-        <p><a herf="dashboard.php">Kembali ke Dashboard</a></p>
+        <p><a href="dashboard.php">Kembali ke Dashboard</a></p>
     </body>
 </html>
