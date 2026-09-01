@@ -7,7 +7,7 @@ if (isset($_SESSION['id_user'])) {
     $waktu = date('Y-m-d H:i:s');
     $_log ="INSERT INTO tbl_log (id_user, aktivitas, waktu)";
     $_log .=" VALUES ('$id_user', 'logout', '$waktu')";
-    mysqli_query($koneksi, $log);
+    mysqli_query($koneksi, $_log);
 }
 
 session_unset();
